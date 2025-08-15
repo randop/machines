@@ -65,9 +65,10 @@ This guide sets up PowerDNS (authoritative and recursor) on an Arch Linux router
 
 2. Create a DNS zone:
    ```bash
-   sudo pdnsutil create-zone internal.mynetwork
-   sudo pdnsutil add-record internal.mynetwork @ NS ns1.internal.mynetwork
-   sudo pdnsutil add-record internal.mynetwork ns1 A 10.0.0.1
+   pdnsutil create-zone internal.tindango
+   pdnsutil add-record internal.tindango @ NS ns1.internal.tindango
+   pdnsutil add-record internal.tindango ns1 A 10.0.0.1
+
    ```
 
 3. Enable and start PowerDNS:
