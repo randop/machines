@@ -1,0 +1,18 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: example
+  namespace: metallb-system
+spec:
+  addresses:
+  - 10.0.0.100-10.0.0.200  # Range from your network, reachable via FRR
+  avoidBuggyIPs: true
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisements
+metadata:
+  name: example
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - example

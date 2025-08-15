@@ -1,0 +1,11 @@
+apiVersion: crd.projectcalico.org/v1
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  asNumber: 64512
+  nodeToNodeMeshEnabled: false
+  serviceClusterIPs:
+  - cidr: 10.96.0.0/12
+  serviceLoadBalancerIPs:
+  - cidr: 10.0.0.0/16

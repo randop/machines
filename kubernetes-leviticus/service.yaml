@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-hello-world-service
+  annotations:
+    projectcalico.org/loadBalancerIPs: '["10.0.0.100"]'
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
+  externalIPs:
+    - 10.0.0.100
+status:
+  loadBalancer:
+    ingress:
+    - ip: 10.0.0.100
