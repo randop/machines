@@ -1,0 +1,34 @@
+Aug 15 06:25:19 markpeter systemd[1]: Started ISC Kea IPv4 DHCP daemon.
+░░ Subject: A start job for unit kea-dhcp4.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit kea-dhcp4.service has finished successfully.
+░░ 
+░░ The job identifier is 1177.
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.522 INFO  [kea-dhcp4.dhcp4/1051.140340502656896] DHCP4_STARTING Kea DHCPv4 server version 3.0.0 (stable) starting
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.523 INFO  [kea-dhcp4.commands/1051.140340502656896] COMMAND_RECEIVED Received command 'config-set'
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.524 WARN  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_MT_DISABLED_QUEUE_CONTROL disabling dhcp queue control when multi-threading is enabled.
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.524 WARN  [kea-dhcp4.dhcp4/1051.140340502656896] DHCP4_RESERVATIONS_LOOKUP_FIRST_ENABLED Multi-threading is enabled and host reservations lookup is always performed first.
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.529 INFO  [kea-dhcp4.hooks/1051.140340502656896] HOOKS_LIBRARY_CLOSED hooks library /usr/lib/kea/hooks/libdhcp_mysql.so successfully closed
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.529 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_CFGMGR_NEW_SUBNET4 a new subnet has been added to configuration: 10.0.0.0/8 with params: t1=1000, t2=2000, valid-lifetime=4000
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.530 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_CFGMGR_SOCKET_TYPE_SELECT using socket type raw
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.530 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_CFGMGR_SOCKET_TYPE_SELECT using socket type raw
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.530 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_CFGMGR_ADD_IFACE listening on interface bond0
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.530 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_CFGMGR_ADD_IFACE listening on interface wlp2s0
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.535 INFO  [kea-dhcp4.mysql-lb-hooks/1051.140340502656896] MYSQL_INIT_OK loading MySQL hooks library successful
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.535 INFO  [kea-dhcp4.hooks/1051.140340502656896] HOOKS_LIBRARY_LOADED hooks library /usr/lib/kea/hooks/libdhcp_mysql.so successfully loaded
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.536 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_LEASE_MGR_BACKENDS_REGISTERED the following lease backend types are available: memfile mysql
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.536 INFO  [kea-dhcp4.hosts/1051.140340502656896] HOSTS_BACKENDS_REGISTERED the following host backend types are available: mysql
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.536 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_FORENSIC_BACKENDS_REGISTERED the following forensic backend types are available: mysql
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.536 INFO  [kea-dhcp4.database/1051.140340502656896] CONFIG_BACKENDS_REGISTERED the following config backend types are available: mysql
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.536 INFO  [kea-dhcp4.dhcp4/1051.140340502656896] DHCP4_CONFIG_COMPLETE DHCPv4 server has completed configuration: added IPv4 subnets: 1; DDNS: disabled
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.540 INFO  [kea-dhcp4.mysql-lb-hooks/1051.140340502656896] MYSQL_LB_DB opening MySQL lease database: host=localhost name=kea password=***** port=3306 type=mysql universe=4 user=kea
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.573 WARN  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_OPEN_SOCKET_FAIL failed to open socket: the interface wlp2s0 is down
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.582 INFO  [kea-dhcp4.dhcp4/1051.140340502656896] DHCP4_OPEN_SOCKETS_FAILED maximum number of open service sockets attempts: 0, has been exhausted without success
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.582 INFO  [kea-dhcp4.dhcpsrv/1051.140340502656896] DHCPSRV_CFGMGR_USE_ALLOCATOR using the iterative allocator for V4 leases in subnet 10.0.0.0/8
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.584 INFO  [kea-dhcp4.dhcp4/1051.140340502656896] DHCP4_MULTI_THREADING_INFO enabled: yes, number of threads: 4, queue size: 64
+Aug 15 06:25:19 markpeter kea-dhcp4[1051]: 2025-08-15 06:25:19.584 INFO  [kea-dhcp4.dhcp4/1051.140340502656896] DHCP4_STARTED Kea DHCPv4 server version 3.0.0 started
+Aug 15 06:25:42 markpeter NetworkManager[469]: <info>  [1755239142.8118] dhcp4 (enxe0): state changed new lease, address=192.168.151.215
+Aug 15 06:25:42 markpeter systemd[1]: Starting Network Manager Script Dispatcher Service...
+
