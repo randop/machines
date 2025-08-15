@@ -1,0 +1,6 @@
+#DEFAULT cdrom source
+#deb cdrom:[Debian GNU/Linux 12.6.0 _Bookworm_ - Official amd64 NETINST with firmware 20240629-10:18]/ bookworm contrib main non-free-firmware
+
+deb https://deb.debian.org/debian bookworm contrib main non-free-firmware
+deb https://deb.debian.org/debian bookworm-updates contrib main non-free-firmware
+deb https://deb.debian.org/debian-security bookworm-security contrib main non-free-firmware
