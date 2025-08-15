@@ -68,6 +68,9 @@ This guide sets up PowerDNS (authoritative and recursor) on an Arch Linux router
    pdnsutil create-zone internal.tindango
    pdnsutil add-record internal.tindango @ NS ns1.internal.tindango
    pdnsutil add-record internal.tindango ns1 A 10.0.0.1
+   pdnsutil create-zone blocked.domains
+   pdnsutil add-record blocked.domains @ NS ns1.blocked.domains
+   pdnsutil add-record blocked.domains ns1 A 10.0.0.1
 
    ```
 
