@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-pacman -S powerdns dnsmasq dnsdist openbsd-netcat mariadb
+pacman -S powerdns dnsmasq dnsdist openbsd-netcat mariadb kea
 
 # dnsmasq setup
 mkdir -p /etc/dnsmasq.d/enabled
