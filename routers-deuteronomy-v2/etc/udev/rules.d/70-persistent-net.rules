@@ -1,0 +1,3 @@
+# 5G/4G hotspot devices
+# Update idVendor, idProduct, serial with values
+ACTION=="add|change", SUBSYSTEM=="net", DRIVERS=="usb", ATTRS{idVendor}=="0000", ATTRS{idProduct}=="0000", ATTRS{serial}=="MY_SERIAL_NUMBER", NAME="enxe0"
