@@ -34,8 +34,8 @@ systemctl restart NetworkManager
 pacman -S powerdns dnsmasq dnsdist openbsd-netcat mariadb kea
 
 # dnsmasq setup
-mkdir -p /etc/dnsmasq.d/enabled
-mkdir -p /etc/dnsmasq.d/available
+mkdir -p /etc/dnsmasq.conf.d/enabled
+mkdir -p /etc/dnsmasq.conf.d/available
 
 # mariadb setup
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
