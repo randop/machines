@@ -137,3 +137,10 @@ pacman -Qi refind
 # Install Reason  : Explicitly installed
 # Install Script  : No
 # Validated By    : Signature
+
+ufw --version
+# ufw 0.36.2
+# Copyright 2008-2023 Canonical Ltd.
+
+NetworkManager -V
+# 1.54.0-1

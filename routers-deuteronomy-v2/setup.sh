@@ -55,3 +55,9 @@ mariadb -u pdns -p pdns </usr/share/doc/powerdns/schema.mysql.sql
 
 # enable services
 systemctl enable --now mariadb dnsmasq pdns dnsdist kea-dhcp4
+
+# setup firewall
+pacman -S ufw
+systemctl enable --now ufw
+ufw enable
+ufw status verbose
