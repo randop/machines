@@ -1,0 +1,56 @@
+# The whole configuration starts here.
+{
+    # DHCPv4 specific configuration starts here.
+    "Dhcp4": {
+	"hooks-libraries": [
+            {
+                "library": "/usr/lib/kea/hooks/libdhcp_mysql.so"
+            }
+        ],
+        "interfaces-config": {
+            "interfaces": [ "bond0", "wlp2s0"],
+            "dhcp-socket-type": "raw"
+        },
+	"lease-database": {
+	    "type": "mysql",
+            "name": "kea",
+            "user": "kea",
+            "password": "keapwd37",
+            "host": "localhost",
+            "port": 3306
+        },
+        "valid-lifetime": 4000,
+        "renew-timer": 1000,
+        "rebind-timer": 2000,
+        "subnet4": [{
+           "pools": [ { "pool": "10.2.0.1-10.255.255.250" } ],
+           "subnet": "10.0.0.0/8",
+           "id": 1,
+	   "option-data": [
+                    {
+                        "name": "routers",
+                        "data": "10.0.0.1"
+                    },
+                    {
+                        "name": "domain-name-servers",
+                        "data": "10.0.0.1"
+                    }
+           ],
+	   "reservations": [
+          	{
+            		"hw-address": "6c:2f:80:19:be:0f",
+            		"ip-address": "10.1.1.1",
+            		"hostname": "randop.tindango"
+          	}
+          ]
+        }],
+
+       # Now loggers are inside the DHCPv4 object.
+       "loggers": [{
+            "name": "*",
+            "severity": "INFO"
+        }]
+    }
+
+# The whole configuration structure ends here.
+}
