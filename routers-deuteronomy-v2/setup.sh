@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-pacman -S powerdns dnsmasq dnsdist openbsd-netcat
+pacman -S powerdns dnsmasq dnsdist openbsd-netcat mariadb
 
 # mariadb setup
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
