@@ -17,6 +17,20 @@
 
 set -euo pipefail
 
+# Install network manager
+pacman -S networkmanager
+systemctl enable --now NetworkManager
+nmcli con add type bond con-name bond0 ifname bond0 mode balance-alb
+nmcli con add type ethernet con-name bond0-enp1s0 ifname enp1s0 master bond0
+nmcli con add type ethernet con-name bond0-enp3s0 ifname enp3s0 master bond0
+nmcli con mod bond0 ipv4.addresses 10.0.0.1/8
+nmcli con mod bond0 ipv4.method manual
+nmcli con up bond0
+nmcli con mod bond0 bond.options "mode=balance-alb,miimon=100"
+nmcli con add type ethernet con-name enxe0 ifname enxe0 ipv4.method auto
+systemctl restart NetworkManager
+
+# Install dhcp dns packages
 pacman -S powerdns dnsmasq dnsdist openbsd-netcat mariadb kea
 
 # dnsmasq setup
