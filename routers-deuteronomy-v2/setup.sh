@@ -16,6 +16,7 @@ systemctl enable --now mariadb
 mariadb-tzinfo-to-sql /usr/share/zoneinfo | mariadb -u root -p mysql
 mariadb-check mysql
 
+# USECASE: System upgrade
 # :: MariaDB was updated to a new feature release. To update the data run:
 # systemctl restart mariadb.service && mariadb-upgrade -u root -p
 
@@ -23,4 +24,4 @@ mariadb-check mysql
 mariadb -u pdns -p pdns </usr/share/doc/powerdns/schema.mysql.sql
 
 # enable services
-systemctl enable --now dnsmasq pdns dnsdist
+systemctl enable --now mariadb dnsmasq pdns dnsdist kea-dhcp4
