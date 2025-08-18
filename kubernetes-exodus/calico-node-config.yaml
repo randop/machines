@@ -1,0 +1,17 @@
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: kubeplane
+spec:
+  bgp:
+    asNumber: 64512
+    ipv4Address: 10.0.160.1/16
+---
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: kubenode
+spec:
+  bgp:
+    asNumber: 64512
+    ipv4Address: 10.0.160.2/16

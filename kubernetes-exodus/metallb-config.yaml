@@ -1,0 +1,43 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  namespace: metallb-system
+  name: lb-pool
+spec:
+  addresses:
+  - 10.0.200.0/24
+  avoidBuggyIPs: true
+
+---
+apiVersion: metallb.io/v1beta1
+kind: BFDProfile
+metadata:
+  name: testbfdprofile
+  namespace: metallb-system
+spec:
+  receiveInterval: 380
+  transmitInterval: 270
+
+---
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  namespace: metallb-system
+  name: router-peer
+spec:
+  peerAddress: 10.0.0.1
+  peerASN: 64513
+  myASN: 64512
+  keepaliveTime: 60s
+  holdTime: 180s
+  bfdProfile: testbfdprofile
+  enableGracefulRestart: true
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  namespace: metallb-system
+  name: lb-advertisement
+spec:
+  ipAddressPools:
+  - lb-pool

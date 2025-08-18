@@ -1,0 +1,12 @@
+apiVersion: operator.tigera.io/v1
+kind: Installation
+metadata:
+  name: default
+  namespace: calico-system
+spec:
+  calicoNetwork:
+    bgp: Enabled
+    ipPools:
+    - cidr: 192.168.0.0/16
+      encapsulation: VXLAN
+

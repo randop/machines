@@ -1,0 +1,12 @@
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+    name: lb-ippool
+spec:
+    cidr: 172.16.0.0/24
+    blockSize: 32
+    natOutgoing: false
+    disabled: false
+    nodeSelector: all()
+    allowedUses:
+    - LoadBalancer

@@ -1,0 +1,12 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: log-bgp-traffic
+  namespace: kube-system
+spec:
+  selector: app == 'calico-node'
+  ingress:
+    - action: Log
+      protocol: TCP
+      destination:
+        ports: [179]
