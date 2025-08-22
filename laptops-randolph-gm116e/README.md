@@ -237,5 +237,7 @@ nvim
 
 6. Applications
 ```bash
+# Install flatpak
+pacman -S flatpak
 
 ```
