@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+source /opt/tools/pass-git-helper/.venv/bin/activate.fish
+uv run /opt/tools/pass-git-helper/passgithelper.py $argv
+deactivate
