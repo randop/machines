@@ -159,3 +159,42 @@ pacman -S openssh
 systemctl disable sshd
 systemctl mask sshd
 ```
+
+3. Desktop environment
+```bash
+pacman -S base-devel \
+  git \
+  libx11 \
+  libxft \
+  libxinerama \
+  xorg-server \
+  xorg-xinit \
+  xorg-xdm \
+  xorg-xrandr \
+  xorg-xwininfo \
+  xorg-xsetroot
+
+mkdir /projects
+cd /projects
+
+git clone git://git.suckless.org/st
+cd st
+cp -v config.def.h config.h
+make
+make clean install
+
+cd /projects
+git clone git://git.suckless.org/dmenu
+cd dmenu
+cp -v config.def.h config.h
+make
+make clean install
+
+cd /projects
+git clone git://git.suckless.org/dwm
+cd dwm
+cp -v config.def.h config.h
+make
+make clean install
+```
+
