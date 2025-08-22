@@ -143,3 +143,12 @@
       ```bash
       pacman -Syu
       ```
+
+## Post-Installation
+
+1. Firewall
+```bash
+pacman -S ufw
+systemctl enable --now ufw
+ufw enable
+```
