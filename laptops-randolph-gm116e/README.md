@@ -198,3 +198,11 @@ make
 make clean install
 ```
 
+4. Shell
+```bash
+export PATH=$PATH:~/.local/bin
+export TERM=xterm-256color
+pacman -S fish
+usermod -s /usr/bin/fish randolph
+```
+
