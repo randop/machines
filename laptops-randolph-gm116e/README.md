@@ -214,5 +214,8 @@ su -l randolph
 curl -LsSf https://raw.githubusercontent.com/zx2c4/password-store/refs/heads/master/src/completion/pass.fish-completion > ~/.config/fish/completions/pass.fish-completion
 echo 'uv generate-shell-completion fish | source' > ~/.config/fish/completions/uv.fish
 echo 'pnpm completion fish | source' > ~/.config/fish/completions/pnpm.fish
+
+# Install kitty
+pacman -S kitty
 ```
 
