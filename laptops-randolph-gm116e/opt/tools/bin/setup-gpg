@@ -8,9 +8,9 @@ pass init 880DF768F4C2A473
 # GPG agent setup
 echo "use-agent" >>~/.gnupg/gpg.conf
 
-# Set timeout to 5 minutes
-echo "default-cache-ttl 300" >>~/.gnupg/gpg-agent.conf
-echo "max-cache-ttl 300" >>~/.gnupg/gpg-agent.conf
+# Set timeout to 1 hour
+echo "default-cache-ttl 3600" >>~/.gnupg/gpg-agent.conf
+echo "max-cache-ttl 3600" >>~/.gnupg/gpg-agent.conf
 
 # To apply the changes, reload the GPG agent:
 gpgconf --reload gpg-agent
