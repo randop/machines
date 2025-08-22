@@ -1,0 +1,11 @@
+#!/bin/sh
+pacman -S socat
+
+# Create virtual tty output
+socat -d -d PTY,link=/dev/vtty0,raw,echo=0 PTY,link=/dev/vtty1,raw,echo=0,mode=644
+
+# Put journald logs on vitual tty 
+journalctl -ef > /dev/vtty0
+
+# Read logs (rootless)
+cat /dev/vtty1
