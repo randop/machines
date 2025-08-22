@@ -1,0 +1,3 @@
+#!/bin/sh
+export PATH=$PATH:/home/randolph/.local/share/flatpak/exports/bin:/home/randolph/.local/bin
+dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
