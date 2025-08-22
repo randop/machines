@@ -11,4 +11,6 @@ flatpak run com.brave.Browser --class=brave &
 
 /usr/bin/kitty --class neovim nvim ~/projects &
 
+/usr/local/bin/st -c lazygit &
+
 exec /usr/local/bin/dwm
