@@ -227,10 +227,15 @@ chown randolph:users /opt/neovim
 
 # Install neovim (non-root)
 curl -LsSf https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz > ~/Downloads/neovim.tar.gz && tar -xvzf ~/Downloads/neovim.tar.gz -C /opt/neovim && rm -v ~/Downloads/neovim.tar.gz
+ln -sv /opt/neovim/nvim-linux-x86_64/bin/nvim ~/.local/bin/nvim
 
-# Install lazyvim
+# Install lazyvim (non-root)
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
 ```
 
+6. Applications
+```bash
+
+```
