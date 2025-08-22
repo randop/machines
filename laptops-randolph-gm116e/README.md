@@ -206,5 +206,11 @@ export PATH=$PATH:~/.local/bin
 export TERM=xterm-256color
 pacman -S fish
 usermod -s /usr/bin/fish randolph
+
+# login my account
+su -l randolph
+
+# import completions
+curl -LsSf https://raw.githubusercontent.com/zx2c4/password-store/refs/heads/master/src/completion/pass.fish-completion > ~/.config/fish/completions/pass.fish-completion
 ```
 
