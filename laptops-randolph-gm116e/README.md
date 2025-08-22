@@ -196,6 +196,8 @@ cd dwm
 cp -v config.def.h config.h
 make
 make clean install
+
+systemctl enable --now xdm
 ```
 
 4. Shell
