@@ -152,3 +152,10 @@ pacman -S ufw
 systemctl enable --now ufw
 ufw enable
 ```
+
+2. SSH client
+```bash
+pacman -S openssh
+systemctl disable sshd
+systemctl mask sshd
+```
