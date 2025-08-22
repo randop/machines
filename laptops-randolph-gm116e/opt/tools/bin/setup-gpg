@@ -4,4 +4,13 @@ gpg --full-generate-key
 gpg --armor --export 880DF768F4C2A473
 git config --global user.signingkey 880DF768F4C2A473
 pass init 880DF768F4C2A473
+
+# GPG agent setup
 echo "use-agent" >>~/.gnupg/gpg.conf
+
+# Set timeout to 5 minutes
+echo "default-cache-ttl 300" >>~/.gnupg/gpg-agent.conf
+echo "max-cache-ttl 300" >>~/.gnupg/gpg-agent.conf
+
+# To apply the changes, reload the GPG agent:
+gpgconf --reload gpg-agent
