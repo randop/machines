@@ -219,3 +219,13 @@ echo 'pnpm completion fish | source' > ~/.config/fish/completions/pnpm.fish
 pacman -S kitty
 ```
 
+5. Editors
+```bash
+# Setup directories
+mkdir /opt/neovim
+chown randolph:users /opt/neovim
+
+# Install neovim (non-root)
+curl -LsSf https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz > ~/Downloads/neovim.tar.gz && tar -xvzf ~/Downloads/neovim.tar.gz -C /opt/neovim && rm -v ~/Downloads/neovim.tar.gz
+```
+
