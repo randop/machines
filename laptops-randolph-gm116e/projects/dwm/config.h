@@ -33,6 +33,8 @@ static const Rule rules[] = {
 	{ "neovim",     NULL,       NULL,       1 << 1,            0,           -1 },
 	{ "console",     NULL,       NULL,       0,            0,           -1 },
 	{ "btop",     NULL,       NULL,       1 << 8,            0,           -1 },
+	{ "lazygit",     NULL,       NULL,       1 << 3,            0,           -1 },
+	{ "Brave",     NULL,       NULL,       1 << 2,            0,           -1 },
 
 };
 
