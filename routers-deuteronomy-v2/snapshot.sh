@@ -144,3 +144,6 @@ ufw --version
 
 NetworkManager -V
 # 1.54.0-1
+
+bird --version
+# BIRD version 3.1.2

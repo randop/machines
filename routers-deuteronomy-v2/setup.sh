@@ -61,3 +61,7 @@ pacman -S ufw
 systemctl enable --now ufw
 ufw enable
 ufw status verbose
+
+# bird2 setup
+pacman -S bird
+systemctl enable bird

@@ -145,3 +145,20 @@ Aug 15 16:55:34 markpeter pdns_server[3288]: Creating backend connection for TCP
 Aug 15 16:55:34 markpeter pdns_server[3288]: About to create 3 backend threads for UDP
 Aug 15 16:55:34 markpeter systemd[1]: Started PowerDNS Authoritative Server.
 Aug 15 16:55:35 markpeter pdns_server[3288]: Done launching threads, ready to distribute questions
+
+● bird.service - BIRD routing daemon
+     Loaded: loaded (/usr/lib/systemd/system/bird.service; enabled; preset: disabled)
+     Active: active (running) since Thu 2025-08-28 05:46:17 UTC; 8h ago
+ Invocation: fc9106954fde46a4a095316715b7d58d
+    Process: 510 ExecStart=/usr/bin/bird (code=exited, status=0/SUCCESS)
+   Main PID: 524 (bird)
+      Tasks: 2 (limit: 4392)
+     Memory: 4.3M (peak: 4.8M)
+        CPU: 7.737s
+     CGroup: /system.slice/bird.service
+             └─524 /usr/bin/bird
+
+Aug 28 05:46:17 markpeter systemd[1]: Starting BIRD routing daemon...
+Aug 28 05:46:17 markpeter systemd[1]: Started BIRD routing daemon.
+Aug 28 05:46:17 markpeter bird[524]: Started
+
