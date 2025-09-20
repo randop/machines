@@ -12,6 +12,8 @@ Environment="KEA_PIDFILE_DIR=/run"
 Environment="KEA_CONTROL_SOCKET_DIR=/run/kea"
 Environment="KEA_LOCKFILE_DIR=/run/lock/kea"
 ExecStart=/usr/bin/kea-dhcp4 -c /etc/kea/kea-dhcp4.conf
+MemoryMax=128M
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
