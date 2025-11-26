@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.16.0-arch2-1 #1 SMP PREEMPT_DYNAMIC Wed, 13 Aug 2025 23:38:48 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.17.9-arch1-1 #1 SMP PREEMPT_DYNAMIC Mon, 24 Nov 2025 15:21:09 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: c0a627b3167d476ca678639a411b4c7a
+#          Boot ID: ee49d5423d954adfb90c4e8c9a58992d
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.16.0-arch2-1
+#           Kernel: Linux 6.17.9-arch1-1
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -42,7 +42,7 @@ mariadb -e "SELECT VERSION();"
 # +----------------+
 # | VERSION()      |
 # +----------------+
-# | 12.0.2-MariaDB |
+# | 12.1.2-MariaDB |
 # +----------------+
 
 dnsmasq --version
@@ -50,50 +50,47 @@ dnsmasq --version
 # Compile time options: IPv6 GNU-getopt DBus no-UBus i18n IDN2 DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth DNSSEC loop-detect inotify dumpfile
 
 pdns_server --version
-# Aug 16 09:58:53 PowerDNS Authoritative Server 4.9.7 (C) PowerDNS.COM BV
-# Aug 16 09:58:53 Using 64-bits mode. Built using gcc 15.1.1 20250425.
-# Aug 16 09:58:53 PowerDNS comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it according to the terms of the GPL version 2.
-# Aug 16 09:58:53 Features: libcrypto-ecdsa libcrypto-ed25519 libcrypto-ed448 libcrypto-eddsa libgeoip libmaxminddb lua lua-records protobuf sodium curl DoT scrypt
-# Aug 16 09:58:53 Built-in modules:
-# Aug 16 09:58:53 Loading '/usr/lib/powerdns/libremotebackend.so'
-# Aug 16 09:58:53 Loading '/usr/lib/powerdns/libpipebackend.so'
-# Aug 16 09:58:53 Loading '/usr/lib/powerdns/libldapbackend.so'
-# Aug 16 09:58:53 Loading '/usr/lib/powerdns/libgpgsqlbackend.so'
-# Aug 16 09:58:53 Loading '/usr/lib/powerdns/liblmdbbackend.so'
-# Aug 16 09:58:53 Loading '/usr/lib/powerdns/libgeoipbackend.so'
-# Aug 16 09:58:53 Unable to load module '/usr/lib/powerdns/libgeoipbackend.so': libyaml-cpp.so.0.8: cannot open shared object file: No such file or directory
-# Aug 16 09:58:53 DNSBackend unable to load module in libgeoipbackend.so
+# Nov 26 06:45:45 Loading '/usr/lib/powerdns/libremotebackend.so'
+# Nov 26 06:45:45 Loading '/usr/lib/powerdns/libpipebackend.so'
+# Nov 26 06:45:45 Loading '/usr/lib/powerdns/libldapbackend.so'
+# Nov 26 06:45:45 Loading '/usr/lib/powerdns/libgpgsqlbackend.so'
+# Nov 26 06:45:45 Loading '/usr/lib/powerdns/liblmdbbackend.so'
+# Nov 26 06:45:45 Loading '/usr/lib/powerdns/libgeoipbackend.so'
+# Nov 26 06:45:45 Unable to load module '/usr/lib/powerdns/libgeoipbackend.so': libyaml-cpp.so.0.8: cannot open shared object file: No such file or directory
+# Nov 26 06:45:45 DNSBackend unable to load module in libgeoipbackend.so
+# PowerDNS Authoritative Server 5.0.1 (C) PowerDNS.COM BV
+# Using 64-bits mode. Built using gcc 15.2.1 20250813.
+# PowerDNS comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it according to the terms of the GPL version 2.
 
 kea-dhcp4 -V
-# 3.0.0 (3.0.0 (tarball))
+# 3.0.2-git (3.0.2-git (git 0b0b77df4940cbe400ba3801db5aa1b5dcd58c79))
 # premium: no
 # linked with:
 # - log4cplus 2.1.0
-# - OpenSSL 3.5.2 5 Aug 2025
+# - OpenSSL 3.6.0 1 Oct 2025
 # lease backends:
 # - Memfile backend 3.0
 
 dnsdist -V
-# dnsdist 2.0.0 (Lua 5.1.4 [LuaJIT 2.1.1748459687])
-# Enabled features: AF_XDP cdb dns-over-quic dns-over-http3 dns-over-tls(gnutls openssl) dns-over-https(nghttp2) dnscrypt ebpf fstrm ipcipher libedit libsodium lmdb protobuf re2 recvmmsg/sendmmsg snmp systemd
+# dnsdist 2.0.1 (Lua 5.1.4 [LuaJIT 2.1.1753364724])
+# Enabled features: AF_XDP cdb dns-over-quic dns-over-http3 dns-over-tls(gnutls openssl) dns-over-https(nghttp2) dnscrypt ebpf fstrm ipcipher libedit libsodium lmdb protobuf re2 recvmmsg/sendmmsg snmp systemd yaml
 
 iperf3 --version
-# iperf 3.19.1 (cJSON 1.7.15)
-# Linux markpeter 6.16.0-arch2-1 #1 SMP PREEMPT_DYNAMIC Wed, 13 Aug 2025 23:38:48 +0000 x86_64
+# iperf 3.20 (cJSON 1.7.15)
+# Linux markpeter 6.17.9-arch1-1 #1 SMP PREEMPT_DYNAMIC Mon, 24 Nov 2025 15:21:09 +0000 x86_64
 # Optional features available: CPU affinity setting, IPv6 flow label, SCTP, TCP congestion algorithm setting, sendfile / zerocopy, socket pacing, authentication, bind to device, support IPv4 don't fragment, POSIX threads
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# dev             1.9G     0  1.9G   0% /dev
-# run             1.9G  972K  1.9G   1% /run
-# efivarfs        128K   63K   61K  52% /sys/firmware/efi/efivars
-# /dev/sda2       117G  2.7G  108G   3% /
+# /dev/sda2       117G  5.6G  105G   6% /
+# devtmpfs        1.9G     0  1.9G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
+# efivarfs        128K  100K   24K  81% /sys/firmware/efi/efivars
+# tmpfs           748M  932K  747M   1% /run
 # tmpfs           1.9G     0  1.9G   0% /tmp
 # tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-# /dev/sda1       511M  214M  298M  42% /boot
+# /dev/sda1       511M   34M  478M   7% /boot
 # tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
-# tmpfs           374M  4.0K  374M   1% /run/user/0
 # tmpfs           374M  4.0K  374M   1% /run/user/1000
 
 fdisk -l
@@ -143,7 +140,7 @@ ufw --version
 # Copyright 2008-2023 Canonical Ltd.
 
 NetworkManager -V
-# 1.54.0-1
+# 1.54.2-1
 
 bird --version
-# BIRD version 3.1.2
+# BIRD version 3.1.4
