@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.17.9-arch1-1 #1 SMP PREEMPT_DYNAMIC Mon, 24 Nov 2025 15:21:09 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.1-arch1-2 #1 SMP PREEMPT_DYNAMIC Sat, 13 Dec 2025 18:23:21 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: ee49d5423d954adfb90c4e8c9a58992d
+#          Boot ID: af9a0dd37fca448e90f281cac9d9e33b
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.17.9-arch1-1
+#           Kernel: Linux 6.18.1-arch1-2
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -58,8 +58,8 @@ pdns_server --version
 # Nov 26 06:45:45 Loading '/usr/lib/powerdns/libgeoipbackend.so'
 # Nov 26 06:45:45 Unable to load module '/usr/lib/powerdns/libgeoipbackend.so': libyaml-cpp.so.0.8: cannot open shared object file: No such file or directory
 # Nov 26 06:45:45 DNSBackend unable to load module in libgeoipbackend.so
-# PowerDNS Authoritative Server 5.0.1 (C) PowerDNS.COM BV
-# Using 64-bits mode. Built using gcc 15.2.1 20250813.
+# PowerDNS Authoritative Server 5.0.2 (C) PowerDNS.COM BV
+# Using 64-bits mode. Built using gcc 15.2.1 20251112.
 # PowerDNS comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it according to the terms of the GPL version 2.
 
 kea-dhcp4 -V
@@ -72,25 +72,25 @@ kea-dhcp4 -V
 # - Memfile backend 3.0
 
 dnsdist -V
-# dnsdist 2.0.1 (Lua 5.1.4 [LuaJIT 2.1.1753364724])
+# dnsdist 2.0.2 (Lua 5.1.4 [LuaJIT 2.1.1764270282])
 # Enabled features: AF_XDP cdb dns-over-quic dns-over-http3 dns-over-tls(gnutls openssl) dns-over-https(nghttp2) dnscrypt ebpf fstrm ipcipher libedit libsodium lmdb protobuf re2 recvmmsg/sendmmsg snmp systemd yaml
 
 iperf3 --version
 # iperf 3.20 (cJSON 1.7.15)
-# Linux markpeter 6.17.9-arch1-1 #1 SMP PREEMPT_DYNAMIC Mon, 24 Nov 2025 15:21:09 +0000 x86_64
+# Linux markpeter 6.18.1-arch1-2 #1 SMP PREEMPT_DYNAMIC Sat, 13 Dec 2025 18:23:21 +0000 x86_64
 # Optional features available: CPU affinity setting, IPv6 flow label, SCTP, TCP congestion algorithm setting, sendfile / zerocopy, socket pacing, authentication, bind to device, support IPv4 don't fragment, POSIX threads
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda2       117G  5.6G  105G   6% /
+# /dev/sda2       117G  6.1G  105G   6% /
 # devtmpfs        1.9G     0  1.9G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
-# efivarfs        128K  100K   24K  81% /sys/firmware/efi/efivars
-# tmpfs           748M  932K  747M   1% /run
+# efivarfs        128K  105K   19K  86% /sys/firmware/efi/efivars
+# tmpfs           748M  876K  747M   1% /run
 # tmpfs           1.9G     0  1.9G   0% /tmp
-# tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+# none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 # /dev/sda1       511M   34M  478M   7% /boot
-# tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+# none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
 # tmpfs           374M  4.0K  374M   1% /run/user/1000
 
 fdisk -l
@@ -140,7 +140,7 @@ ufw --version
 # Copyright 2008-2023 Canonical Ltd.
 
 NetworkManager -V
-# 1.54.2-1
+# 1.54.3-1
 
 bird --version
-# BIRD version 3.1.4
+# BIRD version 3.1.5
