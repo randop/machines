@@ -11,7 +11,7 @@ EOF
 
 Kubernetes, clusters, edges, IoT, computers, servers
 
->  Copyright © 2010 — 2025 Randolph Ledesma
+>  Copyright © 2010 — 2026 Randolph Ledesma
 >
 > Licensed under the Apache License, Version 2.0 (the "License");
 > you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ Kubernetes, clusters, edges, IoT, computers, servers
 > limitations under the License.
 >
 
-Copyright © 2010 — 2025 [Randolph Ledesma](https://gitlab.com/randop).
+Copyright © 2010 — 2026 [Randolph Ledesma](https://gitlab.com/randop).
 
-Last updated on 2025-08-15T7:07:56.000Z
+Last updated on 2026-01-01T08:17:57.000Z
 
