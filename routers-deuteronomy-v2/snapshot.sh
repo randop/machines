@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.2-arch2-1 #1 SMP PREEMPT_DYNAMIC Thu, 18 Dec 2025 18:00:18 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.3-arch1-1 #1 SMP PREEMPT_DYNAMIC Fri, 02 Jan 2026 17:52:55 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: 3f3869c29ff54235ad71bdf75db615d9
+#          Boot ID: f5444ed6af9b4313b13a283518aa8e31
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.2-arch2-1
+#           Kernel: Linux 6.18.3-arch1-1
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
