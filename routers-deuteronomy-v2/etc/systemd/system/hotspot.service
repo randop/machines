@@ -1,0 +1,16 @@
+[Unit]
+Description=WiFi hotspot setup
+Before=kea-dhcp4.service hostapd.service
+After=network-online.target NetworkManager-wait-online.service
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nmcli device set wlan0 managed no
+ExecStart=/usr/bin/ip link set wlan0 up
+ExecStart=/usr/bin/ip addr add 192.168.0.1/24 dev wlan0
+ExecStart=/usr/bin/sysctl -w net.ipv4.ip_forward=1
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

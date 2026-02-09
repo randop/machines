@@ -143,3 +143,9 @@ NetworkManager -V
 
 bird --version
 # BIRD version 3.2.0
+
+hostapd -v
+# hostapd v2.11-hostap_2_11+
+# User space daemon for IEEE 802.11 AP management,
+# IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
+# Copyright (c) 2002-2024, Jouni Malinen <j@w1.fi> and contributors

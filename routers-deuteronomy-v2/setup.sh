@@ -65,3 +65,7 @@ ufw status verbose
 # bird2 setup
 pacman -S bird
 systemctl enable bird
+
+# WiFi hotspot setup
+pacman -s hostapd
+systemctl enable --now hostapd

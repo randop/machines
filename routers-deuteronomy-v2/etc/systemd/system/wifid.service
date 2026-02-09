@@ -1,0 +1,7 @@
+[Unit]
+Description=WiFi hotspot
+After=hostapd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/hotspot.sh

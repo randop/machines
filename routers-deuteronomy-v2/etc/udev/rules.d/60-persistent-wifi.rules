@@ -1,0 +1,2 @@
+# WiFi devices
+ACTION=="add|change", SUBSYSTEM=="net", ATTR{address}=="00:00:00:00:00:00", NAME="wlan0"
