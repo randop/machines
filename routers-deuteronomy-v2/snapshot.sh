@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.5-arch1-1 #1 SMP PREEMPT_DYNAMIC Sun, 11 Jan 2026 17:10:53 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.9-arch1-2 #1 SMP PREEMPT_DYNAMIC Mon, 09 Feb 2026 17:16:33 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: 96072b8694bc4ecf94247e5297ecbc6d
+#          Boot ID: 73cb0771f10a4e93a0ebfdad72dafbfd
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.5-arch1-1
+#           Kernel: Linux 6.18.9-arch1-2
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -42,7 +42,7 @@ mariadb -e "SELECT VERSION();"
 # +----------------+
 # | VERSION()      |
 # +----------------+
-# | 12.1.2-MariaDB |
+# | 12.2.2-MariaDB |
 # +----------------+
 
 dnsmasq --version
@@ -58,8 +58,8 @@ pdns_server --version
 # Nov 26 06:45:45 Loading '/usr/lib/powerdns/libgeoipbackend.so'
 # Nov 26 06:45:45 Unable to load module '/usr/lib/powerdns/libgeoipbackend.so': libyaml-cpp.so.0.8: cannot open shared object file: No such file or directory
 # Nov 26 06:45:45 DNSBackend unable to load module in libgeoipbackend.so
-# PowerDNS Authoritative Server 5.0.2 (C) PowerDNS.COM BV
-# Using 64-bits mode. Built using gcc 15.2.1 20251112.
+# PowerDNS Authoritative Server 5.0.3 (C) PowerDNS.COM BV
+# Using 64-bits mode. Built using gcc 15.2.1 20260209.
 # PowerDNS comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it according to the terms of the GPL version 2.
 
 kea-dhcp4 -V
