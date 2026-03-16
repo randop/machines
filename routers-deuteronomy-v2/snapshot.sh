@@ -152,7 +152,7 @@ hostapd -v
 # Copyright (c) 2002-2024, Jouni Malinen <j@w1.fi> and contributors
 
 sqlite3 --version
-# 3.51.2 2026-01-09 17:27:48 b270f8339eb13b504d0b2ba154ebca966b7dde08e40c3ed7d559749818cbalt1 (64-bit)
+# 3.52.0 2026-03-06 16:01:44 557aeb43869d3585137b17690cb3b64f7de6921774daae9e56403c3717dcalt1 (64-bit)
 
 pacman -Qi reflector
 # Name            : reflector
@@ -203,3 +203,6 @@ pacman -Qi intel-ucode
 journalctl -k --grep=microcode
 # Mar 16 17:01:12 archlinux kernel: microcode: Current revision: 0x0000090d
 # Mar 16 17:01:12 archlinux kernel: microcode: Updated early from: 0x0000090a
+
+vnstat --version
+# vnStat 2.13 by Teemu Toivola <tst at iki dot fi> (SQLite 3.52.0)
