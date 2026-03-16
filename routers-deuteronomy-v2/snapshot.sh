@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.9-arch1-2 #1 SMP PREEMPT_DYNAMIC Mon, 09 Feb 2026 17:16:33 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.19.8-arch1-1 #1 SMP PREEMPT_DYNAMIC Sat, 14 Mar 2026 01:07:43 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: 73cb0771f10a4e93a0ebfdad72dafbfd
+#          Boot ID: f0656ebbfd114442aacc5b6427e59a7c
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.9-arch1-2
+#           Kernel: Linux 6.19.8-arch1-1
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -81,15 +81,16 @@ iperf3 --version
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda2       117G  7.1G  104G   7% /
-# devtmpfs        1.9G     0  1.9G   0% /dev
+# /dev/sda2       117G  8.0G  103G   8% /
+# devtmpfs        1.8G     0  1.8G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
-# efivarfs        128K  119K  5.0K  96% /sys/firmware/efi/efivars
-# tmpfs           748M  932K  747M   1% /run
+# efivarfs        128K   33K   91K  27% /sys/firmware/efi/efivars
+# tmpfs           748M  900K  747M   1% /run
 # tmpfs           1.9G     0  1.9G   0% /tmp
 # none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-# /dev/sda1       511M   34M  478M   7% /boot
+# /dev/sda1       511M   64M  448M  13% /boot
 # none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+# tmpfs           374M  4.0K  374M   1% /run/user/0
 # tmpfs           374M  4.0K  374M   1% /run/user/1000
 
 fdisk -l
@@ -139,7 +140,7 @@ ufw --version
 # Copyright 2008-2023 Canonical Ltd.
 
 NetworkManager -V
-# 1.54.3-1
+# 1.56.0-1
 
 bird --version
 # BIRD version 3.2.0
@@ -152,3 +153,53 @@ hostapd -v
 
 sqlite3 --version
 # 3.51.2 2026-01-09 17:27:48 b270f8339eb13b504d0b2ba154ebca966b7dde08e40c3ed7d559749818cbalt1 (64-bit)
+
+pacman -Qi reflector
+# Name            : reflector
+# Version         : 2023-5
+# Description     : A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
+# Architecture    : any
+# URL             : https://xyne.dev/projects/reflector
+# Licenses        : GPL-2.0-only
+# Groups          : None
+# Provides        : None
+# Depends On      : python
+# Optional Deps   : rsync: rate rsync mirrors
+# Required By     : None
+# Optional For    : None
+# Conflicts With  : None
+# Replaces        : None
+# Installed Size  : 158.15 KiB
+# Packager        : Bert Peters <bertptrs@archlinux.org>
+# Build Date      : Sun 18 Jan 2026 04:35:51 PM UTC
+# Install Date    : Mon 16 Mar 2026 04:33:13 PM UTC
+# Install Reason  : Explicitly installed
+# Install Script  : No
+# Validated By    : Signature
+
+pacman -Qi intel-ucode
+# Name            : intel-ucode
+# Version         : 20260227-1
+# Description     : Microcode update files for Intel CPUs
+# Architecture    : any
+# URL             : https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files
+# Licenses        : custom
+# Groups          : None
+# Provides        : None
+# Depends On      : None
+# Optional Deps   : None
+# Required By     : None
+# Optional For    : None
+# Conflicts With  : None
+# Replaces        : microcode_ctl
+# Installed Size  : 30.24 MiB
+# Packager        : T.J. Townsend <blakkheim@archlinux.org>
+# Build Date      : Fri 27 Feb 2026 05:22:23 PM UTC
+# Install Date    : Mon 16 Mar 2026 04:57:29 PM UTC
+# Install Reason  : Explicitly installed
+# Install Script  : No
+# Validated By    : Signature
+
+journalctl -k --grep=microcode
+# Mar 16 17:01:12 archlinux kernel: microcode: Current revision: 0x0000090d
+# Mar 16 17:01:12 archlinux kernel: microcode: Updated early from: 0x0000090a
