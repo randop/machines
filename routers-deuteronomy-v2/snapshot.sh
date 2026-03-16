@@ -149,3 +149,6 @@ hostapd -v
 # User space daemon for IEEE 802.11 AP management,
 # IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
 # Copyright (c) 2002-2024, Jouni Malinen <j@w1.fi> and contributors
+
+sqlite3 --version
+# 3.51.2 2026-01-09 17:27:48 b270f8339eb13b504d0b2ba154ebca966b7dde08e40c3ed7d559749818cbalt1 (64-bit)
