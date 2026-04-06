@@ -72,7 +72,7 @@ kea-dhcp4 -V
 # - Memfile backend 3.0
 
 dnsdist -V
-# dnsdist 2.0.2 (Lua 5.1.4 [LuaJIT 2.1.1765228720])
+# dnsdist 2.0.3 (Lua 5.1.4 [LuaJIT 2.1.1774896198])
 # Enabled features: AF_XDP cdb dns-over-quic dns-over-http3 dns-over-tls(gnutls openssl) dns-over-https(nghttp2) dnscrypt ebpf fstrm ipcipher libedit libsodium lmdb protobuf re2 recvmmsg/sendmmsg snmp systemd yaml
 
 iperf3 --version

@@ -17,8 +17,8 @@
 
 set -euo pipefail
 
-reflector \ 
---verbose \
+reflector \
+  --verbose \
   --latest 50 \
   --age 24 \
   --protocol https \
