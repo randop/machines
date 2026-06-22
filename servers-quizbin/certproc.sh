@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Backup certificates directory
+mv -v certs certs-<yyyymmdd>
+mkdir certs
+
 # Provision an ephemeral ArchLinux container
 docker run -it --rm -v /home/johnpaul/certs:/certs archlinux:base /bin/bash
 
