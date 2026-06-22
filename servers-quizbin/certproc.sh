@@ -47,4 +47,5 @@ exit
 #-=============================================================================
 
 mkdir /hostmp/certs
+su -l root
 cp -Rv /home/johnpaul/certs/ /hostmp/certs/
