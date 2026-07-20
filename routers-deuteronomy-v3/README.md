@@ -18,6 +18,8 @@ basestrap /mnt \
   dhcpcd-s6 \
   iwd \
   iwd-s6 \
+  nftables \
+  nftables-s6 \
   nano \
   vim
 ```
