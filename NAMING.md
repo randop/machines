@@ -7,6 +7,6 @@
 | 3  | Thyatira     | frontend environments               |
 | 4  | Philadelphia | email and routers and vital servers |
 | 5  | Sardis       | database environments               |
-| 6  | Pergamos     | TODO                                |
+| 6  | Pergamos     | kubernetes                          |
 | 7  | Laodicea     | test and ci/cd environments         |
 
