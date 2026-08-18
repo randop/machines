@@ -1,0 +1,32 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+# xfs options:
+# - `noatime` - skip access-time updates on every read.
+#               This cuts write amplification for no benefit lost
+# - `nodiratime` - is redundant once noatime is set,
+#               but harmless to include explicitly.
+# - `nofail` — if this drive ever fails to mount, the node still boots.
+# - `inode64` — allows inodes to be placed anywhere on the filesystem
+#               rather than confined to the first TB.
+#               Default on filesystems made with modern xfsprogs,
+#               but worth pinning explicitly so it's not silently
+#               relying on version defaults.
+# - `logbsize=256k` — max size for the XFS in-memory log buffer,
+#               batches metadata log writes.
+#               Helps under write-heavy, many-small-files pattern.
+# - Last two fields `0 0` — XFS doesn't use the traditional
+#               boot-time fsck pass;
+#               `fsck.xfs` is a no-op stub.
+#               `0 0` is correct here, not `1 2`.
+
+# root xfs partition
+/dev/disk/by-uuid/00000000-0000-0000-0000-000000000000 / xfs defaults,noatime,nodiratime,nofail,inode64,logbsize=256k 0 0
+
+# UEFI boot partition
+/dev/disk/by-uuid/AB31-00EA /boot/efi vfat defaults 0 1
