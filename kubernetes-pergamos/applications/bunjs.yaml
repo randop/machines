@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bunjs
+  labels:
+    app: bunjs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bunjs
+  template:
+    metadata:
+      labels:
+        app: bunjs
+    spec:
+      containers:
+      - name: bunjs
+        image: oven/bun:1
+        command:
+          - bun
+          - -e
+          - |
+            Bun.serve({
+              port: 3000,
+              fetch(req) {
+                return new Response("OK\n");
+              },
+            });
+            console.log("application server running on port 3000");
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bunjs
+  labels:
+    app: bunjs
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 172.31.250.19
+  selector:
+    app: bunjs
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
+    protocol: TCP
+
