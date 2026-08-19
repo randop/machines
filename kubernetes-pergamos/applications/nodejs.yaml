@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs
+  labels:
+    app: nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejs
+        image: node:lts-trixie-slim
+        command:
+          - node
+          - -e
+          - |
+            require('http').createServer((req, res) => {
+              res.writeHead(200, { 'Content-Type': 'text/plain' });
+              res.end('OK\n');
+            }).listen(3000);
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs
+  labels:
+    app: nodejs
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 172.31.250.20
+  selector:
+    app: nodejs
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
+    protocol: TCP
+
