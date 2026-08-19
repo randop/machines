@@ -1,0 +1,37 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: external-ips
+  namespace: metallb-system
+spec:
+  addresses:
+    - 172.31.250.1/32
+    - 172.31.250.2/32
+    - 172.31.250.3/32
+    - 172.31.250.4/32
+    - 172.31.250.5/32
+    - 172.31.250.6/32
+    - 172.31.250.7/32
+    - 172.31.250.8/32
+    - 172.31.250.9/32
+    - 172.31.250.10/32
+    - 172.31.250.11/32
+    - 172.31.250.12/32
+    - 172.31.250.13/32
+    - 172.31.250.14/32
+    - 172.31.250.15/32
+    - 172.31.250.16/32
+    - 172.31.250.17/32
+    - 172.31.250.18/32
+    - 172.31.250.19/32
+    - 172.31.250.20/32
+
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: external-ips
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+    - external-ips
