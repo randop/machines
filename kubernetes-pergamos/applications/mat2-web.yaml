@@ -1,0 +1,96 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mat2-web
+  labels:
+    app: mat2-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mat2-web
+  template:
+    metadata:
+      labels:
+        app: mat2-web
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: mat2-web
+          image: registry.0xacab.org/jvoisin/mat2-web:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: MAT2_ALLOW_ORIGIN_WHITELIST
+              value: "*"
+            - name: MAT2_MAX_FILES_BULK_DOWNLOAD
+              value: "10"
+            - name: MAT2_MAX_FILE_AGE_FOR_REMOVAL
+              value: "900"
+            - name: MAT2_WEB_DOWNLOAD_FOLDER
+              value: "/app/upload"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: run-uwsgi
+              mountPath: /run/uwsgi
+            - name: upload
+              mountPath: /app/upload
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+      volumes:
+        - name: tmp
+          emptyDir: {}
+        - name: run-uwsgi
+          emptyDir: {}
+        - name: upload
+          emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mat2-web
+  labels:
+    app: mat2-web
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 172.31.250.6
+  selector:
+    app: mat2-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      protocol: TCP
+
