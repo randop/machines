@@ -1,0 +1,12 @@
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: bird-router
+  namespace: metallb-system
+spec:
+  myASN: 64512
+  peerASN: 64513
+  peerAddress: 10.0.0.1
+  nodeSelectors:
+    - matchLabels:
+        kubernetes.io/os: linux
