@@ -1,0 +1,22 @@
+apiVersion: projectcalico.org/v3
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  logSeverityScreen: Info
+  asNumber: 64512
+  nodeToNodeMeshEnabled: true
+
+  # Kubernetes ClusterIP range
+  serviceClusterIPs:
+    - cidr: 172.20.0.0/16
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bird-router
+spec:
+  peerIP: 10.0.0.1
+  asNumber: 64513
+  nodeSelector: all()
