@@ -1,0 +1,5 @@
+set folder = "/home/postal/smtpmailvar/data"
+set spoolfile = "+maildir"
+set mbox_type = Maildir
+set sort = threads
+set sort_aux = reverse-last-date-received
