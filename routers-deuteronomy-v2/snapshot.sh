@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.48-1-lts #1 SMP PREEMPT_DYNAMIC Fri, 28 Aug 2026 11:47:30 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.50-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 07 Sep 2026 18:35:16 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: 62075f11697c4c30856c630581066b8c
+#          Boot ID: ec0061902e804d26b1861ba4f6ed37eb
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.48-1-lts
+#           Kernel: Linux 6.18.50-1-lts
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -72,7 +72,7 @@ kea-dhcp4 -V
 # - Memfile backend 3.0
 
 dnsdist -V
-# dnsdist 2.1.1 (Lua 5.1.4 [LuaJIT 2.1.1785763465])
+# dnsdist 2.1.2 (Lua 5.1.4 [LuaJIT 2.1.1788460057])
 # Enabled features: AF_XDP cdb dns-over-quic dns-over-http3 dns-over-tls(gnutls openssl) dns-over-https(nghttp2) dnscrypt ebpf fstrm ipcipher ipcrypt2 libedit libsodium lmdb protobuf re2 recvmmsg/sendmmsg snmp systemd yaml
 
 iperf3 --version
@@ -81,15 +81,16 @@ iperf3 --version
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda2       117G  9.8G  101G   9% /
+# /dev/sda2       117G   11G  100G  10% /
 # devtmpfs        1.9G     0  1.9G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
-# efivarfs        128K  127K     0 100% /sys/firmware/efi/efivars
-# tmpfs           760M  896K  759M   1% /run
-# tmpfs           1.9G     0  1.9G   0% /tmp
+# efivarfs        128K   23K  101K  19% /sys/firmware/efi/efivars
+# tmpfs           760M  912K  759M   1% /run
+# tmpfs           1.9G  136K  1.9G   1% /tmp
 # none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 # /dev/sda1       511M   69M  443M  14% /boot
 # none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+# tmpfs           380M  4.0K  380M   1% /run/user/1001
 # tmpfs           380M  4.0K  380M   1% /run/user/1000
 
 fdisk -l
@@ -201,8 +202,8 @@ pacman -Qi intel-ucode
 # Validated By    : Signature
 
 journalctl -k --grep=microcode
-# Aug 29 05:49:42 archlinux kernel: microcode: Current revision: 0x0000090d
-# Aug 29 05:49:42 archlinux kernel: microcode: Updated early from: 0x0000090a
+# Sep 08 14:21:22 archlinux kernel: microcode: Current revision: 0x0000090d
+# Sep 08 14:21:22 archlinux kernel: microcode: Updated early from: 0x0000090a
 
 vnstat --version
 # vnStat 2.13 by Teemu Toivola <tst at iki dot fi> (SQLite 3.53.4)
