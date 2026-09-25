@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.50-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 07 Sep 2026 18:35:16 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.53-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 21 Sep 2026 14:42:53 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: ec0061902e804d26b1861ba4f6ed37eb
+#          Boot ID: 2befa26391a74649b91152ccbd031905
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.50-1-lts
+#           Kernel: Linux 6.18.53-1-lts
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -42,7 +42,7 @@ mariadb -e "SELECT VERSION();"
 # +----------------+
 # | VERSION()      |
 # +----------------+
-# | 12.3.3-MariaDB |
+# | 13.0.2-MariaDB |
 # +----------------+
 
 dnsmasq --version
@@ -81,12 +81,12 @@ iperf3 --version
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda2       117G   11G  100G  10% /
+# /dev/sda2       117G   21G   90G  19% /
 # devtmpfs        1.9G     0  1.9G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
-# efivarfs        128K   23K  101K  19% /sys/firmware/efi/efivars
-# tmpfs           760M  912K  759M   1% /run
-# tmpfs           1.9G  136K  1.9G   1% /tmp
+# efivarfs        128K   32K   92K  26% /sys/firmware/efi/efivars
+# tmpfs           760M  916K  759M   1% /run
+# tmpfs           1.9G  132K  1.9G   1% /tmp
 # none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 # /dev/sda1       511M   69M  443M  14% /boot
 # none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
@@ -144,7 +144,7 @@ NetworkManager -V
 # 1.58.1-1
 
 bird --version
-# BIRD version 3.2.1
+# BIRD version 3.3.2
 
 hostapd -v
 # hostapd v2.12-hostap_2_12+
@@ -202,8 +202,14 @@ pacman -Qi intel-ucode
 # Validated By    : Signature
 
 journalctl -k --grep=microcode
-# Sep 08 14:21:22 archlinux kernel: microcode: Current revision: 0x0000090d
-# Sep 08 14:21:22 archlinux kernel: microcode: Updated early from: 0x0000090a
+# Sep 25 06:51:39 archlinux kernel: microcode: Current revision: 0x0000090d
+# Sep 25 06:51:39 archlinux kernel: microcode: Updated early from: 0x0000090a
 
 vnstat --version
 # vnStat 2.13 by Teemu Toivola <tst at iki dot fi> (SQLite 3.53.4)
+
+haproxy -v
+# HAProxy version 3.4.5 2026/09/24 - https://haproxy.org/
+# Status: long-term supported branch - will stop receiving fixes around Q2 2031.
+# Known bugs: http://www.haproxy.org/bugs/bugs-3.4.5.html
+# Running on: Linux 6.18.53-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 21 Sep 2026 14:42:53 +0000 x86_64
