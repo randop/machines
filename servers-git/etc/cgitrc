@@ -1,8 +1,10 @@
 root-title=Git Repositories
 root-desc=Read-only Git repository browser
 
-scan-path=/var/ci/repos
+virtual-root=/
+
 remove-suffix=1
+scan-path=/var/ci/repos
 
 css=/cgit.css
 js=/cgit.js
