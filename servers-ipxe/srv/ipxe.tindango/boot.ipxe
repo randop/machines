@@ -6,7 +6,7 @@ menu Arch Linux iPXE Boot Menu
 item arch-live     Arch Linux
 item artix-live    Artix Linux
 item ubuntu-22     Ubuntu Server 22 LTS
-item debian-13-net Debian 13 Trixie
+item debian-13-net Debian 13 Trixie Netboot
 item shell         iPXE shell
 item reboot        Reboot
 
