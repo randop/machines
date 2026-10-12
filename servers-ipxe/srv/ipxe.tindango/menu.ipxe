@@ -5,7 +5,8 @@ set server_host ipxe.tindango
 menu Arch Linux iPXE Boot Menu
 item arch-live     Arch Linux
 item artix-live    Artix Linux
-item ubuntu-22	   Ubuntu Server 22 LTS
+item ubuntu-22     Ubuntu Server 22 LTS
+item debian-13-net Debian 13 Trixie
 item shell         iPXE shell
 item reboot        Reboot
 
@@ -26,6 +27,12 @@ set ubuntu_base http://${server_host}/os-images/ubuntu-22
 kernel ${ubuntu_base}/casper/vmlinuz
 initrd ${ubuntu_base}/casper/initrd
 imgargs vmlinuz initrd=initrd root=/dev/ram0 ramdisk_size=1500000 cloud-config-url=/dev/null ip=dhcp url=${ubuntu_base}/ubuntu-22.04.5-live-server-amd64.iso
+boot
+
+:debian-13-net
+set debian_base http://${server_host}/os-images/debian-13-net
+kernel ${debian_base}/linux ip=dhcp ---
+initrd ${debian_base}/initrd.gz
 boot
 
 :shell
