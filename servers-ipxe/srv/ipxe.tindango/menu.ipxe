@@ -1,0 +1,35 @@
+#!ipxe
+
+set server_host ipxe.tindango
+
+menu Arch Linux iPXE Boot Menu
+item arch-live     Arch Linux
+item artix-live    Artix Linux
+item ubuntu-22	   Ubuntu Server 22 LTS
+item shell         iPXE shell
+item reboot        Reboot
+
+choose --default arch-live --timeout 15000 target && goto ${target}
+
+:arch-live
+kernel http://${server_host}/os-images/archlinux/arch/boot/x86_64/vmlinuz-linux ip=dhcp BOOTIF=${net0/mac} archisobasedir=arch archiso_http_srv=http://${server_host}/os-images/archlinux/
+initrd http://${server_host}/os-images/archlinux/arch/boot/x86_64/initramfs-linux.img
+boot
+
+:artix-live
+kernel http://${server_host}/os-images/artixlinux/boot/vmlinuz-x86_64 ip=dhcp artix_http_srv=http://${server_host}/os-images/artixlinux/ ip=dhcp BOOTIF=${net0/mac} lang=en_US keytable=us tz=UTC nomodeset
+initrd http://${server_host}/os-images/artixlinux/boot/initramfs-x86_64.img
+boot
+
+:ubuntu-22
+set ubuntu_base http://${server_host}/os-images/ubuntu-22
+kernel ${ubuntu_base}/casper/vmlinuz
+initrd ${ubuntu_base}/casper/initrd
+imgargs vmlinuz initrd=initrd root=/dev/ram0 ramdisk_size=1500000 cloud-config-url=/dev/null ip=dhcp url=${ubuntu_base}/ubuntu-22.04.5-live-server-amd64.iso
+boot
+
+:shell
+shell
+
+:reboot
+reboot
