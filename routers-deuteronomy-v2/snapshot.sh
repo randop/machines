@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.53-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 21 Sep 2026 14:42:53 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.55-1-lts #1 SMP PREEMPT_DYNAMIC Sat, 03 Oct 2026 15:08:01 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: 2befa26391a74649b91152ccbd031905
+#          Boot ID: 567c39dbd710423c9237874255676b02
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.53-1-lts
+#           Kernel: Linux 6.18.55-1-lts
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -63,34 +63,34 @@ pdns_server --version
 # PowerDNS comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it according to the terms of the GPL version 2.
 
 kea-dhcp4 -V
-# 3.2.0-git (git e1855213f333e96f65b952676cc03f93942b1e57)
+# 3.2.1-git (git 1737462bc79276e3269304ea8cd3d1c03400e30d)
 # premium: no
 # linked with:
 # - log4cplus 2.2.0
-# - OpenSSL 3.6.4 25 Aug 2026
+# - OpenSSL 3.6.5 29 Sep 2026
 # lease backends:
 # - Memfile backend 3.0
 
 dnsdist -V
-# dnsdist 2.1.2 (Lua 5.1.4 [LuaJIT 2.1.1788460057])
+# dnsdist 2.1.3 (Lua 5.1.4 [LuaJIT 2.1.1788856981])
 # Enabled features: AF_XDP cdb dns-over-quic dns-over-http3 dns-over-tls(gnutls openssl) dns-over-https(nghttp2) dnscrypt ebpf fstrm ipcipher ipcrypt2 libedit libsodium lmdb protobuf re2 recvmmsg/sendmmsg snmp systemd yaml
 
 iperf3 --version
-# iperf 3.21 (cJSON 1.7.15)
+# iperf 3.22 (cJSON 1.7.15)
 # Optional features available: CPU affinity setting, IPv6 flow label, SCTP, TCP congestion algorithm setting, sendfile / zerocopy, socket pacing, authentication, bind to device, support IPv4 don't fragment, POSIX threads, GSO/GRO support
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda2       117G   21G   90G  19% /
+# /dev/sda2       117G   34G   77G  31% /
 # devtmpfs        1.9G     0  1.9G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
-# efivarfs        128K   32K   92K  26% /sys/firmware/efi/efivars
-# tmpfs           760M  916K  759M   1% /run
-# tmpfs           1.9G  132K  1.9G   1% /tmp
+# efivarfs        128K   40K   84K  32% /sys/firmware/efi/efivars
+# tmpfs           760M  964K  759M   1% /run
+# tmpfs           1.9G  144K  1.9G   1% /tmp
 # none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 # /dev/sda1       511M   69M  443M  14% /boot
 # none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
-# tmpfs           380M  4.0K  380M   1% /run/user/1001
+# tmpfs           380M  8.0K  380M   1% /run/user/1001
 # tmpfs           380M  4.0K  380M   1% /run/user/1000
 
 fdisk -l
@@ -144,7 +144,7 @@ NetworkManager -V
 # 1.58.1-1
 
 bird --version
-# BIRD version 3.3.2
+# BIRD version 3.3.3
 
 hostapd -v
 # hostapd v2.12-hostap_2_12+
@@ -153,7 +153,7 @@ hostapd -v
 # Copyright (c) 2002-2026, Jouni Malinen <j@w1.fi> and contributors
 
 sqlite3 --version
-# 3.53.4 2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e0945alt1 (64-bit)
+# 3.54.0 2026-10-09 15:46:58 be8d059e9a49089ab2dce5ed26dd87aaf598fdc5fbe0b107c0dd758464bcalt1 (64-bit)
 
 pacman -Qi reflector
 # Name            : reflector
@@ -180,7 +180,7 @@ pacman -Qi reflector
 
 pacman -Qi intel-ucode
 # Name            : intel-ucode
-# Version         : 20260812-1
+# Version         : 20260925-1
 # Description     : Microcode update files for Intel CPUs
 # Architecture    : any
 # URL             : https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files
@@ -195,8 +195,8 @@ pacman -Qi intel-ucode
 # Replaces        : microcode_ctl
 # Installed Size  : 31.45 MiB
 # Packager        : T.J. Townsend <blakkheim@archlinux.org>
-# Build Date      : Wed 12 Aug 2026 10:04:42 PM UTC
-# Install Date    : Sat 29 Aug 2026 05:47:35 AM UTC
+# Build Date      : Fri 25 Sep 2026 10:53:29 PM UTC
+# Install Date    : Wed 07 Oct 2026 06:58:50 AM UTC
 # Install Reason  : Explicitly installed
 # Install Script  : No
 # Validated By    : Signature
@@ -209,7 +209,7 @@ vnstat --version
 # vnStat 2.13 by Teemu Toivola <tst at iki dot fi> (SQLite 3.53.4)
 
 haproxy -v
-# HAProxy version 3.4.5 2026/09/24 - https://haproxy.org/
+# HAProxy version 3.4.6 2026/09/28 - https://haproxy.org/
 # Status: long-term supported branch - will stop receiving fixes around Q2 2031.
-# Known bugs: http://www.haproxy.org/bugs/bugs-3.4.5.html
-# Running on: Linux 6.18.53-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 21 Sep 2026 14:42:53 +0000 x86_64
+# Known bugs: http://www.haproxy.org/bugs/bugs-3.4.6.html
+# Running on: Linux 6.18.55-1-lts #1 SMP PREEMPT_DYNAMIC Sat, 03 Oct 2026 15:08:01 +0000 x86_64
