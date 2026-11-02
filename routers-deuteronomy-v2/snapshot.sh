@@ -19,17 +19,17 @@ set -euo pipefail
 
 # Get Arch Linux information
 uname -a
-# Linux markpeter 6.18.55-1-lts #1 SMP PREEMPT_DYNAMIC Sat, 03 Oct 2026 15:08:01 +0000 x86_64 GNU/Linux
+# Linux markpeter 6.18.60-1-lts #1 SMP PREEMPT_DYNAMIC Fri, 30 Oct 2026 12:43:14 +0000 x86_64 GNU/Linux
 
 hostnamectl
 #  Static hostname: markpeter
 #        Icon name: computer-desktop
 #          Chassis: desktop 🖥
 #       Machine ID: 00000000000000000000000000000000
-#          Boot ID: 567c39dbd710423c9237874255676b02
+#          Boot ID: 67f947bb59db44498a8d2762f039bd08
 #     Product UUID: 00000000-0000-0000-0000-000000080000
 # Operating System: Arch Linux
-#           Kernel: Linux 6.18.55-1-lts
+#           Kernel: Linux 6.18.60-1-lts
 #     Architecture: x86-64
 #  Hardware Vendor: AMI Corporation
 #   Hardware Model: Aptio CRB
@@ -50,15 +50,15 @@ dnsmasq --version
 # Compile time options: IPv6 GNU-getopt DBus no-UBus i18n IDN2 DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth DNSSEC loop-detect inotify dumpfile
 
 pdns_server --version
-# Aug 29 06:01:02 Loading '/usr/lib/powerdns/libremotebackend.so'
-# Aug 29 06:01:02 Loading '/usr/lib/powerdns/libpipebackend.so'
-# Aug 29 06:01:02 Loading '/usr/lib/powerdns/libldapbackend.so'
-# Aug 29 06:01:02 Loading '/usr/lib/powerdns/libgpgsqlbackend.so'
-# Aug 29 06:01:02 Loading '/usr/lib/powerdns/liblmdbbackend.so'
-# Aug 29 06:01:02 Loading '/usr/lib/powerdns/libgeoipbackend.so'
-# Aug 29 06:01:02 Unable to load module '/usr/lib/powerdns/libgeoipbackend.so': libyaml-cpp.so.0.9: cannot open shared object file: No such file or directory
-# Aug 29 06:01:02 DNSBackend unable to load module in libgeoipbackend.so
-# PowerDNS Authoritative Server 5.1.4 (C) PowerDNS.COM BV
+# Nov 02 17:03:21 Loading '/usr/lib/powerdns/libremotebackend.so'
+# Nov 02 17:03:21 Loading '/usr/lib/powerdns/libpipebackend.so'
+# Nov 02 17:03:21 Loading '/usr/lib/powerdns/libldapbackend.so'
+# Nov 02 17:03:21 Loading '/usr/lib/powerdns/libgpgsqlbackend.so'
+# Nov 02 17:03:21 Loading '/usr/lib/powerdns/liblmdbbackend.so'
+# Nov 02 17:03:21 Loading '/usr/lib/powerdns/libgeoipbackend.so'
+# Nov 02 17:03:21 Unable to load module '/usr/lib/powerdns/libgeoipbackend.so': libyaml-cpp.so.0.9: cannot open shared object file: No such file or directory
+# Nov 02 17:03:21 DNSBackend unable to load module in libgeoipbackend.so
+# PowerDNS Authoritative Server 5.1.5 (C) PowerDNS.COM BV
 # Using 64-bits mode. Built using gcc 16.2.1 20260810.
 # PowerDNS comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it according to the terms of the GPL version 2.
 
@@ -81,16 +81,18 @@ iperf3 --version
 
 df -h
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda2       117G   34G   77G  31% /
+# /dev/sda2       117G   59G   52G  54% /
 # devtmpfs        1.9G     0  1.9G   0% /dev
 # tmpfs           1.9G     0  1.9G   0% /dev/shm
-# efivarfs        128K   40K   84K  32% /sys/firmware/efi/efivars
-# tmpfs           760M  964K  759M   1% /run
-# tmpfs           1.9G  144K  1.9G   1% /tmp
+# efivarfs        128K   51K   73K  41% /sys/firmware/efi/efivars
+# tmpfs           760M 1000K  759M   1% /run
+# tmpfs           1.9G  376K  1.9G   1% /tmp
 # none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+# /dev/loop0      3.8G  3.8G     0 100% /srv/ipxe.tindango/os-images/debian-13-dvd1
 # /dev/sda1       511M   69M  443M  14% /boot
 # none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
 # tmpfs           380M  8.0K  380M   1% /run/user/1001
+# tmpfs           380M  4.0K  380M   1% /run/user/963
 # tmpfs           380M  4.0K  380M   1% /run/user/1000
 
 fdisk -l
@@ -141,10 +143,10 @@ ufw --version
 # Copyright 2008-2023 Canonical Ltd.
 
 NetworkManager -V
-# 1.58.1-1
+# 1.58.1-2
 
 bird --version
-# BIRD version 3.3.3
+# BIRD version 3.4.0
 
 hostapd -v
 # hostapd v2.12-hostap_2_12+
@@ -153,7 +155,7 @@ hostapd -v
 # Copyright (c) 2002-2026, Jouni Malinen <j@w1.fi> and contributors
 
 sqlite3 --version
-# 3.54.0 2026-10-09 15:46:58 be8d059e9a49089ab2dce5ed26dd87aaf598fdc5fbe0b107c0dd758464bcalt1 (64-bit)
+# 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6alt1 (64-bit)
 
 pacman -Qi reflector
 # Name            : reflector
@@ -206,10 +208,17 @@ journalctl -k --grep=microcode
 # Sep 25 06:51:39 archlinux kernel: microcode: Updated early from: 0x0000090a
 
 vnstat --version
-# vnStat 2.13 by Teemu Toivola <tst at iki dot fi> (SQLite 3.53.4)
+# vnStat 2.14 by Teemu Toivola <tst at iki dot fi> (SQLite 3.54.1)
 
 haproxy -v
-# HAProxy version 3.4.6 2026/09/28 - https://haproxy.org/
+# HAProxy version 3.4.7 2026/10/14 - https://haproxy.org/
 # Status: long-term supported branch - will stop receiving fixes around Q2 2031.
-# Known bugs: http://www.haproxy.org/bugs/bugs-3.4.6.html
-# Running on: Linux 6.18.55-1-lts #1 SMP PREEMPT_DYNAMIC Sat, 03 Oct 2026 15:08:01 +0000 x86_64
+# Known bugs: http://www.haproxy.org/bugs/bugs-3.4.7.html
+# Running on: Linux 6.18.60-1-lts #1 SMP PREEMPT_DYNAMIC Fri, 30 Oct 2026 12:43:14 +0000 x86_64
+
+nginx -V
+# nginx version: nginx/1.30.6
+# built by gcc 16.2.1 20260810 (GCC)
+# built with OpenSSL 3.6.5 29 Sep 2026
+# TLS SNI support enabled
+# configure arguments: --prefix=/etc/nginx --conf-path=/etc/nginx/nginx.conf --sbin-path=/usr/bin/nginx --modules-path=/usr/lib/nginx/modules --pid-path=/run/nginx.pid --lock-path=/run/lock/nginx.lock --user=http --group=http --http-log-path=/var/log/nginx/access.log --error-log-path=stderr --http-client-body-temp-path=/var/lib/nginx/client-body --http-proxy-temp-path=/var/lib/nginx/proxy --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-cc-opt='-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -g -ffile-prefix-map=/build/nginx/src=/usr/src/debug/nginx -flto=auto' --with-ld-opt='-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,pack-relative-relocs -flto=auto' --with-compat --with-debug --with-file-aio --with-http_addition_module --with-http_auth_request_module --with-http_dav_module --with-http_degradation_module --with-http_flv_module --with-http_geoip_module=dynamic --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module=dynamic --with-http_mp4_module --with-http_perl_module=dynamic --with-http_random_index_module --with-http_realip_module --with-http_secure_link_module --with-http_slice_module --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_v2_module --with-http_v3_module --with-http_xslt_module=dynamic --with-mail=dynamic --with-mail_ssl_module --with-pcre-jit --with-stream=dynamic --with-stream_geoip_module=dynamic --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-threads
